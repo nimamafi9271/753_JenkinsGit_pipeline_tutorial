@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    environment{
+        NAME="Nima"
+    }
+    stages{
+        stage('Build'){
+            steps{
+                echo "executing Build"
+            }
+            post{
+                success{
+                    echo "Build Successful"
+                    mail to: "nima.mafi92@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build was Successful!"
+                }
+            }
+        }
+    }
+}
