@@ -17,5 +17,15 @@ pipeline{
                 }
             }
         }
+        stage('Test'){
+            steps{
+                echo "Executing Test stage"
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo "Executing Deploy stage..., $NAME"   
+            }
+        }
     }
 }
